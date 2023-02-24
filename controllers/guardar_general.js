@@ -53,4 +53,4 @@ const crear = (req, res) => {
   //};
 };
 
-module.exports = { crear };
+module.exports = { crear }; //esto es un comentaro de prueba de git
