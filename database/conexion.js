@@ -1,4 +1,4 @@
-const mongoose = require("mongoose"); // no entiendo por que
+const mongoose = require("mongoose");
 mongoose.set("strictQuery", true);
 const conexion = async () => {
   await mongoose.connect("mongodb://mongo:3010/NIMBUS");
