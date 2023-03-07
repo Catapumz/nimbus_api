@@ -3,17 +3,24 @@ const { conexion } = require("./database/conexion"); //importamos función conex
 const express = require("express"); //asignamos a express las funciones de la libreria express
 const cors = require("cors"); // lo mismo que arriba pero conn cors
 
-const routes_listar_bloque_15 = require("./routes/pared15/listar_bloque_15");
-const routes_listar_via_15 = require("./routes/pared15/listar_via_15");
-const routes_listar_bloque_25 = require("./routes/pared25/listar_bloque_25");
-const routes_listar_via_25 = require("./routes/pared25/listar_via_25");
-
-const routes_guardar_bloque_15 = require("./routes/pared15/guardar_bloque_15");
-const routes_guardar_via_15 = require("./routes/pared15/guardar_via_15");
-const routes_guardar_bloque_25 = require("./routes/pared25/guardar_bloque_25");
-const routes_guardar_via_25 = require("./routes/pared25/guardar_via_25");
-
 const routes_listar = require("./routes/listar_general");
+const routes_listar_25 = require("./routes/listar_25");
+const routes_listar_15 = require("./routes/listar_15");
+
+const routes_listar_bloque_15_dificultad = require("./routes/listar_bloque_15_dificultad");
+const routes_listar_travesia_15_dificultad = require("./routes/listar_travesia_15_dificultad");
+const routes_listar_bloque_25_dificultad = require("./routes/listar_bloque_25_dificultad");
+const routes_listar_travesia_25_dificultad = require("./routes/listar_travesia_25_dificultad");
+
+const routes_buscar_25 = require("./routes/buscar_25");
+const routes_buscar_15 = require("./routes/buscar_15");
+
+const routes_listar_travesia_25 = require("./routes/listar_travesia_25");
+const routes_listar_travesia_15 = require("./routes/listar_travesia_15");
+
+const routes_listar_bloque_25 = require("./routes/listar_travesia_25");
+const routes_listar_bloque_15 = require("./routes/listar_travesia_15");
+
 const routes_guardar = require("./routes/guardar_general");
 const routes_borrar = require("./routes/borrar_general");
 const routes_editar = require("./routes/editar_general");
@@ -36,20 +43,33 @@ async function main() {
   app.use(express.urlencoded({ extended: true })); //recibir datos form-urlencoded
 
   //Crear rutas
-
-  app.use("/pared15", routes_listar_bloque_15);
-  app.use("/pared15", routes_listar_via_15);
-  app.use("/pared25", routes_listar_bloque_25);
-  app.use("/pared25", routes_listar_via_25);
-
-  app.use("/pared15", routes_guardar_bloque_15);
-  app.use("/pared15", routes_guardar_via_15);
-  app.use("/pared25", routes_guardar_bloque_25);
-  app.use("/pared25", routes_guardar_via_25);
-
+  //listar general
   app.use("/", routes_listar);
+  //listar 15
+  app.use("/", routes_listar_15);
+  //listar 25
+  app.use("/", routes_listar_25);
+  //listar bloques
+  app.use("/", routes_listar_bloque_25);
+  app.use("/", routes_listar_bloque_15);
+  //listar travesias
+  app.use("/", routes_listar_travesia_25);
+  app.use("/", routes_listar_travesia_15);
+  //listar bloques por dificultad
+  app.use("/", routes_listar_bloque_15_dificultad);
+  app.use("/", routes_listar_bloque_25_dificultad);
+  //listar travesias por dificultad
+  app.use("/", routes_listar_travesia_15_dificultad);
+  app.use("/", routes_listar_travesia_25_dificultad);
+  //buscar en 15
+  app.use("/", routes_buscar_15);
+  //buscar en 25
+  app.use("/", routes_buscar_25);
+  //guardar una entrada
   app.use("/", routes_guardar);
+  //borrar una entrada
   app.use("/", routes_borrar);
+  //editar una entrada
   app.use("/", routes_editar);
 
   //Crear servidor y escuchar peticiones http

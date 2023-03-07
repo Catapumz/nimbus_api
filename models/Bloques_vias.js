@@ -3,7 +3,7 @@ const { Schema, model } = require("mongoose");
 
 //defino el objeto ()o modelo de la colleción
 const Via15Schema = Schema({
-  nombre: {
+  name: {
     type: String,
     required: true,
   },

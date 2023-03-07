@@ -1,0 +1,15 @@
+listar todas 
+
+filtro dificultad por separado
+filtro por nombre y autor
+
+bloque o travesía
+dentro de bloque o travesía dificultad
+
+delete
+
+modificar
+
+crear
+
+
