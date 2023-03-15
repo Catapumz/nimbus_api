@@ -1,4 +1,4 @@
-version: '3'
+version: "3"
 services:
   node-express-docker:
     build:
@@ -11,7 +11,5 @@ services:
   mongo:
     image: mongo
     command: mongod --port 3010
-    volumes:
-      - ./data:/data/db
     ports:
-      - '3011:3010'
+      - "3011:3010"
