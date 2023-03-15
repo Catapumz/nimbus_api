@@ -14,10 +14,8 @@ const routes_buscar_25 = require("./routes/buscar_25");
 const routes_buscar_15 = require("./routes/buscar_15");
 
 const routes_listar_travesia_25 = require("./routes/listar_travesia_25");
-const routes_listar_travesia_15 = require("./routes/listar_travesia_15");
 
-const routes_listar_bloque_25 = require("./routes/listar_travesia_25");
-const routes_listar_bloque_15 = require("./routes/listar_travesia_15");
+const routes_listar_bloque_25 = require("./routes/listar_bloque_25");
 
 const routes_guardar = require("./routes/guardar_general");
 const routes_borrar = require("./routes/borrar_general");
@@ -47,11 +45,9 @@ function conexionApp() {
   //listar bloques
 
   app.use("/", routes_listar_bloque_25);
-  app.use("/", routes_listar_bloque_15);
   //listar travesias
 
   app.use("/", routes_listar_travesia_25);
-  app.use("/", routes_listar_travesia_15);
   //listar bloques por dificultad
 
   app.use("/", routes_listar_bloque_15_dificultad);
