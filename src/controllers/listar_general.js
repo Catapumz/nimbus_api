@@ -10,10 +10,12 @@ const consulta = async (req, res) => {
     isbloque,
     quepared,
   };
+  console.log(query.dificultad, query.isbloque, query.quepared);
 
   Object.keys(query).forEach(
     (key) => query[key] === undefined && delete query[key]
   );
+  console.log(query.dificultad, query.isbloque, query.quepared);
 
   const bloques = await Bloques_vias.find(query);
 

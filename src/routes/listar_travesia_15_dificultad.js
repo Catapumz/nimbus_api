@@ -5,6 +5,6 @@ const {
 const router = express.Router();
 
 // Rutas de pruebas
-router.get("/listar/travesia/15/:dificultad?", consulta_bloque);
+router.get("/listar/15/travesia/:dificultad?", consulta_bloque);
 
 module.exports = router;
